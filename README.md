@@ -63,6 +63,19 @@ $ bundle exec rails server
 
 You can browse to the app at http://localhost:3000/
 
+### Using Docker
+You can run Dradis through Docker by building an image.
+
+```
+# Clone the repo
+
+# Build the Docker image
+docker build .
+
+# Run the Docker image
+docker run -ti --rm -p 3000:3000 <image_id> bin/rails server
+```
+
 ### Using Vagrant
 
 If you'd like to use dradis in Vagrant, you can use the included Vagrantfile.
