@@ -4,7 +4,7 @@ RUN useradd -ms /bin/bash dradis
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
-RUN apt-get -y install build-essential libssl-dev libreadline-dev zlib1g-dev libsqlite3-dev libmysqlclient-dev git-core curl bzip2
+RUN apt-get -y install build-essential libssl-dev libreadline-dev zlib1g-dev libsqlite3-dev libmariadb-dev git-core curl bzip2
 
 USER dradis
 WORKDIR /home/dradis/
@@ -22,5 +22,4 @@ WORKDIR /home/dradis/dradis/dradis-ce/
 RUN RUBY_CONFIGURE_OPTS=--disable-install-doc rbenv install 2.4.1
 RUN ./bin/setup
 
-# EXPOSE 3000
-# ENTRYPOINT ['bin/rails', 'server']
+EXPOSE 3000
